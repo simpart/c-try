@@ -73,7 +73,7 @@ try {
 ```
 
 ## erorr callback function
-error callback function is called every time it thwew error.<br>
+error callback function is called every time it threw error.<br>
 **it is necessary you to implements.<br>**
 please chenge value of CK_ERRCB_FUNCNAME in hdr/ckai/check.h, if you want rename function name
 
