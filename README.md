@@ -44,6 +44,17 @@ try {
 }
 ```
 
+### get error message
+you can get error message setted by __ck_throwerr by using CK_ERROR_MSG define.
+
+```c++
+try {
+    __ck_throwerr("error message");
+} catch {
+    printf("%s¥n", CK_ERROR_MSG);  // error message
+}
+```
+
 ## erorr callback function
 error callback function is called every time it thwew error.<br>
 it is necessary you to implements.<br>
