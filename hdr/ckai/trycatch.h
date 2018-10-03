@@ -73,5 +73,15 @@ extern ck_trychctl_st gck_tchctl;
 
 #define __ck_throwerr_ret(msg, ret) __ck_throwerr_com(msg, return ret;)
 
+/*** prototype ***/
+/**
+ * error calback function
+ * 
+ * @param file name of error point (__FILE__)
+ * @param line number of error point (__LINE__)
+ * @param error message
+ */
+void err_callback (const char *, int, char *);
+
 #endif
 /* end of file */
