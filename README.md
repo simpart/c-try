@@ -13,7 +13,7 @@ you can use it right away with include a header file(ckai.h).
 
 ### try-catch (for no return value function)
 
-```c
+```c++
 try {
     /* pros */
 } catch {
@@ -23,7 +23,7 @@ try {
 
 ### try-catch (for return any value function)
 
-```c
+```c++
 try {
     /* pros */
 } catch(FAILED_VAL) {
@@ -35,7 +35,7 @@ try {
 please use '$' instead of ';' when you called function.<br>
 '$' is macro for check whether function call threw error.
 
-```c
+```c++
 try {
     call_func()$
 } catch {
@@ -61,7 +61,7 @@ void err_callback (const char *, int, char *);
 ```
 
 # sample
-```c
+```c++
 #include <stdio.h>
 #include "ckai.h"
 
@@ -100,10 +100,9 @@ test in catch error
 ```
 
 # attention
-- not supported multi-process, multi-thread.
+this try-catch refers the global value and use the single label.<br>
+please do not use the following
 
- this try-catch refers the global value.<br>
- so do not use try-catch at multi-process program.
- 
- - not supported nest try-catch
+- not supported multi-process, multi-thread. 
+- not supported nest try-catch
  
