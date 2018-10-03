@@ -1,6 +1,7 @@
 # c-kai
-c lang util macro.<br>
-simple header files for enable try-catch at c lang.
+simple header files for enable try-catch in c lang.<br>
+and it also has utility macros.<br>
+you can use it right away with include a header file(ckai.h).
 
 # usage
 
@@ -30,11 +31,22 @@ try {
 }
 ```
 
+### catch the error in called function
+please use '$' instead of ';' when you called function.<br>
+'$' is macro for check whether function call threw error.
+
+```c
+try {
+    call_func()$
+} catch {
+    /* err pros */
+}
+```
+
 ## erorr callback function
 error callback function is called every time it thwew error.<br>
 it is necessary you to implements.<br>
-<br>
-please chenge value of CK_ERRCB_FUNCNAME at hdr/ckai/check.h, if you want rename function name
+please chenge value of CK_ERRCB_FUNCNAME in hdr/ckai/check.h, if you want rename function name
 
 ```c
 /* prototype */
@@ -88,5 +100,10 @@ test in catch error
 ```
 
 # attention
-this try-catch function refers the global value.<br>
-so do not use try-catch at multi-process program.
+- not supported multi-process, multi-thread.
+
+ this try-catch refers the global value.<br>
+ so do not use try-catch at multi-process program.
+ 
+ - not supported nest try-catch
+ 
