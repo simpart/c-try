@@ -3,7 +3,7 @@ c lang util macro.
 simple header files for enable try-catch at c lang.
 
 # sample
-```
+```c
 #include <stdio.h>
 #include "ckai.h"
 
