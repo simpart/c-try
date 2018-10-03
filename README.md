@@ -88,5 +88,5 @@ test in catch error
 ```
 
 # attention
-this try-catch function refers global value.
+this try-catch function refers global value.<br>
 so do not use try-catch at multi-process program.
