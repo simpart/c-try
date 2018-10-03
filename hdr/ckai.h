@@ -7,7 +7,7 @@
 #define __CKAI_H__
 
 #include "ckai/check.h"
-#include "ckai/com.h"
+#include "ckai/util.h"
 #include "ckai/trycatch.h"
 
 #endif

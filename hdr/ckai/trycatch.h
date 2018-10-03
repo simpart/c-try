@@ -6,29 +6,30 @@
 #ifndef __CK_TRYCATCH_H__
 #define __CK_TRYCATCH_H__
 
+
 /*** include ***/
-#include "ckai/com.h"
+#include "ckai/util.h"
 
 /*** define ***/
-#define try ck_init_tch();
+#define try memset(&gck_tchctl, 0x00, sizeof(ck_trychctl_st));
 
 #define catch       \
     return;         \
     goto CK_CATCH;  \
     CK_CATCH:       \
-    ck_set_catsts(CK_CATSTS_INCAT);
+    gck_tchctl.sts = CK_CATSTS_INCAT;
 
 #define catch_ret(r)  \
     return r;         \
     goto CK_CATCH;    \
     CK_CATCH:         \
-    ck_set_catsts(CK_CATSTS_INCAT);
+    gck_tchctl.sts = CK_CATSTS_INCAT;
 
 #define catch_        \
     goto CK_FINALLY;  \
     goto CK_CATCH;    \
     CK_CATCH:         \
-    ck_set_catsts(CK_CATSTS_INCAT);
+    gck_tchctl.sts = CK_CATSTS_INCAT;
 
 #define finally CK_FINALLY:
 
@@ -47,10 +48,8 @@ typedef struct ck_trychctl {
     ck_catsts_en sts;
 } ck_trychctl_st;
 
-/*** prototype ***/
-void ck_init_tch   (void);
-void ck_set_catsts (ck_catsts_en);
 
+ck_trychctl_st        gck_tchctl;
 extern ck_trychctl_st gck_tchctl;
 
 /*** macro ***/
@@ -62,8 +61,8 @@ extern ck_trychctl_st gck_tchctl;
     }
 
 #define __ck_throwerr_com(msg, prs)                        \
-    strncpy(&gttr_tchctl.errmsg[0], msg, CK_TCHMSG_LEN-1); \
-    ck_err(__FILE__, __LINE__, msg);                       \
+    strncpy(&gck_tchctl.errmsg[0], msg, CK_TCHMSG_LEN-1);  \
+    CK_ERRCB_FUNCNAME(__FILE__, __LINE__, msg);            \
     if (CK_CATSTS_INCAT == gck_tchctl.sts) {               \
         gck_tchctl.sts = CK_CATSTS_INCATERR;               \
         prs;                                               \

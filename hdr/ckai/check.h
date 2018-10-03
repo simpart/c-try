@@ -10,12 +10,8 @@
 #include <stdlib.h>
 
 /*** define ***/
-
-/*** struct ***/
-
-/*** prototype ***/
-void ck_err       (const char *, int, char *);
-void ck_set_errcb (void (*)(const char *, int, char *));
+#define CK_ERRCB_FUNCNAME err_callback
+#define CK_ERROR_MSG      gck_tchctl.errmsg
 
 /*** macro ***/
 /**
@@ -30,7 +26,7 @@ void ck_set_errcb (void (*)(const char *, int, char *));
  */
 #define __ck_errchk_value_com(tgt, err, msg, prs) \
     if (err == tgt) {                             \
-        ck_err(__FILE__, __LINE__, msg);          \
+        CK_ERRCB_FUNCNAME(__FILE__, __LINE__, msg);   \
         prs;                                      \
     }
 
@@ -46,7 +42,7 @@ void ck_set_errcb (void (*)(const char *, int, char *));
  */
 #define __ck_errchk_notval_com(tgt1, tgt2, msg, prs) \
     if (tgt1 != tgt2) {                              \
-        ck_err(__FILE__, __LINE__, msg);             \
+        CK_ERRCB_FUNCNAME(__FILE__, __LINE__, msg);      \
         prs;                                         \
     }
 
@@ -60,10 +56,10 @@ void ck_set_errcb (void (*)(const char *, int, char *));
  * @param error process
  * @note this is private macro
  */
-#define __ck_errchk_over_com(tgt, err, msg, prs) \
-    if (err < tgt) {                             \
-        ck_err(__FILE__, __LINE__, msg);         \
-        prs;                                     \
+#define __ck_errchk_over_com(tgt, err, msg, prs)     \
+    if (err < tgt) {                                 \
+        CK_ERRCB_FUNCNAME(__FILE__, __LINE__, msg);  \
+        prs;                                         \
     }
 
 /**
@@ -76,10 +72,10 @@ void ck_set_errcb (void (*)(const char *, int, char *));
  * @param error process
  * @note this is private macro
  */
-#define __ck_errchk_less_com(tgt, err, msg, prs) \
-    if (err > tgt) {                             \
-        ck_err(__FILE__, __LINE__, msg);         \
-        prs;                                     \
+#define __ck_errchk_less_com(tgt, err, msg, prs)    \
+    if (err > tgt) {                                \
+        CK_ERRCB_FUNCNAME(__FILE__, __LINE__, msg); \
+        prs;                                        \
     }
 
 

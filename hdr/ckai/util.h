@@ -9,15 +9,6 @@
 /*** include ***/
 #include <string.h>
 
-/*** define ***/
-#define CK_OK  0
-#define CK_NG -1
-
-#define CK_TRUE  1
-#define CK_FALSE 0
-
-/*** typedef ***/
-
 /*** macro ***/
 #define __ck_loop(i, c) int i=0; for (;i < c;i++)
 #define __ck_loop_i(c) __ck_loop(i, c)
