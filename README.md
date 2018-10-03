@@ -36,6 +36,19 @@ try {
 }
 ```
 
+### finally
+please use 'catch_' macro with or without return value.
+
+```c++
+try {
+    /* pros */
+} catch_ {
+    /* err pros */
+} finally {
+    /* pros */
+}
+```
+
 ### catch the error in called function
 please use '$' instead of ';' when you called function.<br>
 '$' is macro for check whether function call threw error.
