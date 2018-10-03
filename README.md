@@ -1,7 +1,11 @@
 # c-kai
 simple header files for enable try-catch in c lang.<br>
 and it also has utility macros.<br>
-you can use it right away with include a header file(ckai.h).
+
+# start
+1. including a header file(ckai.h).
+
+2. implements err_callback function.(please see 'erorr callback function' section)
 
 # usage
 
