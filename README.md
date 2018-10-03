@@ -117,4 +117,4 @@ please do not use the following
 
 - not supported multi-process, multi-thread. 
 - not supported nest try-catch
- 
+- default error message buffer size is 256.
