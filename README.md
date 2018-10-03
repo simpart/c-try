@@ -130,7 +130,7 @@ test in catch error
 
 # attention
 this try-catch refers the global value and use the single label.<br>
-please do not use the following
+please be aware of the following.
 
 - not supported multi-process, multi-thread. 
 - not supported nest try-catch
