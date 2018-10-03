@@ -22,7 +22,7 @@ try {
 ```
 
 ### try-catch (for return any value function)
-please set error value to FAILED_VAL depending on function return value.
+please change FAILED_VAL to any error value  depending on function return value.
 
 ```c++
 try {
