@@ -95,7 +95,8 @@ void err_callback (const char *, int, char *);
 #include "ctry.h"
 
 void err_callback (const char *fn, int ln, char *msg) {
-    __ck_nullskip2(fn, msg);
+    NULCHK_SKIP(fn);
+    NULCHK_SKIP(msg);
     printf("%s,%d:%s\n", fn, ln, msg);
 }
 
