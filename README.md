@@ -1,9 +1,9 @@
-# c-kai
+# c-try
 simple header files for enable try-catch in c lang.<br>
 and it also has utility macros.<br>
 
 # start
-1. including a header file(ckai.h).
+1. including a header file(ctry.h).
 
 2. implements err_callback function.(please see 'erorr callback function' section)
 
@@ -75,7 +75,7 @@ try {
 ## erorr callback function
 error callback function is called every time it threw error.<br>
 **it is necessary you to implements.<br>**
-please chenge value of CK_ERRCB_FUNCNAME in hdr/ckai/check.h, if you want rename function name
+please chenge value of CK_ERRCB_FUNCNAME in hdr/ctry/check.h, if you want rename function name
 
 ```c
 /* prototype */
@@ -92,7 +92,7 @@ void err_callback (const char *, int, char *);
 # sample
 ```c++
 #include <stdio.h>
-#include "ckai.h"
+#include "ctry.h"
 
 void err_callback (const char *fn, int ln, char *msg) {
     __ck_nullskip2(fn, msg);
