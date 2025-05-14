@@ -1,7 +1,6 @@
 /**
  * @file   check.h
  * @brief  defined check function
- * @author simpart
  */
 #ifndef __CK_CHECK_H__
 #define __CK_CHECK_H__
@@ -11,11 +10,11 @@
 #define CK_ERROR_MSG      gck_tchctl.errmsg
 
 /*** include ***/
-#include "ckai/check/equal.h"
-#include "ckai/check/nequal.h"
-#include "ckai/check/less.h"
-#include "ckai/check/over.h"
-#include "ckai/check/range.h"
+#include "ctry/check/equal.h"
+#include "ctry/check/nequal.h"
+#include "ctry/check/less.h"
+#include "ctry/check/over.h"
+#include "ctry/check/range.h"
 
 #endif
 /* end of file */

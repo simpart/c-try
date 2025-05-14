@@ -8,7 +8,7 @@
 
 
 /*** include ***/
-#include "ckai/util.h"
+#include "ctry/util.h"
 
 /*** define ***/
 #define try memset(&gck_tchctl, 0x00, sizeof(ck_trychctl_st));

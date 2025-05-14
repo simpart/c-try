@@ -1,6 +1,5 @@
 /**
- * @file com.h
- * @author simpart
+ * @file util.h
  */
 
 #ifndef __CK_COM_H__
